@@ -56,4 +56,4 @@ Each folder's README has step-by-step setup including **how to install Python**.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Apache License 2.0 — see [LICENSE](LICENSE).
