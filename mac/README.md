@@ -1,24 +1,34 @@
 # Cho Coder — Share Edition (macOS / Linux)
 
 A terminal AI coding & security-testing assistant powered by the **DeepSeek API**.
-Just one file (`choshare.py`). Bring your own key. No local model.
+The whole program is **one file: `choshare.py`** (no other source, no required pip packages).
+Bring your own key. No local model.
 
-## 1. Requirements
+## What you need
 
-- **Python 3** (pre-installed on macOS and most Linux)
-- A **DeepSeek API key** — get one at https://platform.deepseek.com
-- *(recommended)* **prompt_toolkit** — keeps the input box pinned at the bottom while work runs:
-  ```bash
-  pip3 install --user prompt_toolkit
-  ```
-  Works without it too (simple mode).
+1. **Python 3.8+**
+   - **macOS does NOT come with Python** — you must install it. Easiest: download the installer from
+     https://www.python.org/downloads/ and run it. (Or, if you use Homebrew: `brew install python`.)
+     Check it worked:
+     ```bash
+     python3 --version
+     ```
+   - Most **Linux** already has `python3`; if not: `sudo apt install python3` (Debian/Ubuntu) etc.
+2. **A DeepSeek API key** — get one at https://platform.deepseek.com (uses your DeepSeek credits).
+3. *(recommended)* **prompt_toolkit** — pins the input box at the bottom while work runs:
+   ```bash
+   pip3 install --user prompt_toolkit
+   ```
+   Works without it too (simple mode).
 
-## 2. Run
+That's all — no other Python packages are needed.
+
+## Run
 
 ```bash
 python3 choshare.py
 ```
-or make it executable and run the launcher:
+or use the launcher:
 ```bash
 chmod +x choshare
 ./choshare
@@ -30,7 +40,7 @@ On first start, set your key inside the app:
 ```
 (or `export DEEPSEEK_API_KEY=sk-...`)
 
-## 3. Choose / switch the model
+## Choose / switch the model
 
 Default is **`deepseek-flash`** — DeepSeek **V4.1 Flash** (newest, fast). Recommended for most work.
 
@@ -39,20 +49,19 @@ Default is **`deepseek-flash`** — DeepSeek **V4.1 Flash** (newest, fast). Reco
 | `deepseek-flash` | **Newest V4.1 Flash. Fast, cheap. Default (recommended).** |
 | `deepseek-v4-pro` | Larger and slower; thinks deeper on very hard problems. |
 
-Switch inside the app:
 ```
 /dsmodel deepseek-v4-pro      # heavier model
 /dsmodel deepseek-flash       # back to the fast default
 ```
 
-## 4. Input & stop while it's working
+## Input & stop while it's working
 
 - While a task runs, the **input box (❯) stays at the bottom** and a `working (Ns)` indicator shows.
   Type a message + Enter — it **queues** and is sent after the task ends.
 - **Stop**: type `/stop` + Enter (stops at the next step) or press **Ctrl-C**.
 - Use ↑ / ↓ for previous inputs.
 
-## 5. Commands
+## Commands
 
 ```
 /help                 this help

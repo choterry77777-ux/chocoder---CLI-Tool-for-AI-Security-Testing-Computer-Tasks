@@ -1,19 +1,27 @@
 # Cho Coder — Share Edition (Windows)
 
 A terminal AI coding & security-testing assistant powered by the **DeepSeek API**.
-Just one file (`choshare.py`). Bring your own key. No local model.
+The whole program is **one file: `choshare.py`** (no other source, no required pip packages).
+Bring your own key. No local model.
 
-## 1. Requirements
+## What you need
 
-- **Python 3** — install from https://python.org and **check "Add Python to PATH"** during setup.
-- A **DeepSeek API key** — get one at https://platform.deepseek.com
-- *(recommended)* **prompt_toolkit** — keeps the input box pinned at the bottom while work runs:
-  ```bat
-  pip install --user prompt_toolkit
-  ```
-  Works without it too (simple mode).
+1. **Python 3.8+** — **Windows does NOT come with Python.** Install it from
+   https://www.python.org/downloads/ and **check "Add python.exe to PATH"** in the installer.
+   Check it worked (in Command Prompt):
+   ```bat
+   python --version
+   ```
+2. **A DeepSeek API key** — get one at https://platform.deepseek.com (uses your DeepSeek credits).
+3. *(recommended)* **prompt_toolkit** — pins the input box at the bottom while work runs:
+   ```bat
+   pip install --user prompt_toolkit
+   ```
+   Works without it too (simple mode).
 
-## 2. Run
+That's all — no other Python packages are needed.
+
+## Run
 
 Double-click **`choshare.bat`**, or from Command Prompt / PowerShell:
 ```bat
@@ -29,7 +37,7 @@ On first start, set your key inside the app:
 ```
 (or set the environment variable `DEEPSEEK_API_KEY`)
 
-## 3. Choose / switch the model
+## Choose / switch the model
 
 Default is **`deepseek-flash`** — DeepSeek **V4.1 Flash** (newest, fast). Recommended for most work.
 
@@ -38,20 +46,19 @@ Default is **`deepseek-flash`** — DeepSeek **V4.1 Flash** (newest, fast). Reco
 | `deepseek-flash` | **Newest V4.1 Flash. Fast, cheap. Default (recommended).** |
 | `deepseek-v4-pro` | Larger and slower; thinks deeper on very hard problems. |
 
-Switch inside the app:
 ```
 /dsmodel deepseek-v4-pro      # heavier model
 /dsmodel deepseek-flash       # back to the fast default
 ```
 
-## 4. Input & stop while it's working
+## Input & stop while it's working
 
 - While a task runs, the **input box (❯) stays at the bottom** and a `working (Ns)` indicator shows.
   Type a message + Enter — it **queues** and is sent after the task ends.
 - **Stop**: type `/stop` + Enter (stops at the next step) or press **Ctrl-C**.
 - Use ↑ / ↓ for previous inputs.
 
-## 5. Commands
+## Commands
 
 ```
 /help                 this help
