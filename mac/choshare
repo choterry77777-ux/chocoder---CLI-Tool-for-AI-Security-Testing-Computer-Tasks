@@ -1,0 +1,3 @@
+#!/bin/sh
+# Cho Coder Share Edition (DeepSeek 전용) 실행 래퍼
+exec python3 "$(dirname "$0")/choshare.py" "$@"
