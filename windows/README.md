@@ -71,10 +71,24 @@ Default is **`deepseek-flash`** — DeepSeek **V4.1 Flash** (newest, fast). Reco
 /web  [on|off]        allow web search / page fetch / internet commands
 /lang [en|ko]         interface & reply language
 /calc <expression>    calculator  (e.g. /calc (3+4)*2**3)
+/graph [clear|save|load]   show the dual-graph (asset + exploration map)
 /sh <cmd>  or  !<cmd>  run a shell command directly
 /clear                new conversation
 /exit                 quit
 ```
+
+## Dual-Graph (security recon)
+
+For security-testing / recon tasks the model keeps two live graphs and reasons over them each turn:
+
+- **Asset Graph** (`asset_map`) — the target's structure: networks, hosts, services, ports,
+  accounts, data.
+- **Exploration Graph** (`explore_map`) — likely-vulnerable paths, each finding's status, and the
+  next action to take.
+
+You don't drive it — the model builds it as it works. `/graph` shows it; `/graph clear` empties it;
+`/graph save [file]` / `/graph load [file]` persist it (default `%USERPROFILE%\.choshare.graph.json`).
+Use it only against systems you own or are authorized to test.
 
 ## ⚠️ Safety
 

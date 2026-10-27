@@ -40,11 +40,28 @@ Each folder's README has step-by-step setup including **how to install Python**.
 
 - **Agentic tools** — the model actually runs `run_command`, `read_file`, `write_file`,
   `take_screenshot`, `web_search`, `fetch_url` on your machine.
+- **Dual-Graph security reasoning** — for recon / security-testing work the model keeps two live
+  graphs: an **Asset Graph** (`asset_map`) mapping the target's networks, hosts, services, ports,
+  accounts and data, and an **Exploration Graph** (`explore_map`) tracking likely-vulnerable paths,
+  each finding's status, and the next action. The map is fed back into the model every turn so it
+  reasons over what it already knows instead of starting over. See it any time with `/graph`.
 - **Two models** — `deepseek-flash` (DeepSeek V4.1 Flash, fast, default) and `deepseek-v4-pro`
   (heavier). Switch with `/dsmodel`.
 - **Live input box** — with `prompt_toolkit`, the input stays pinned at the bottom while work runs;
   type to queue a follow-up, `/stop` to interrupt.
 - **Max reasoning** on every call, Korean/English UI, a built-in calculator, shell passthrough.
+
+### Dual-Graph (`/graph`)
+
+```
+/graph               show the current asset + exploration map
+/graph clear         empty it
+/graph save [file]   save the map to JSON (default ~/.choshare.graph.json)
+/graph load [file]   reload a saved map
+```
+
+The model fills the graph itself while it works; `/graph` just lets you watch and keep the map.
+Use it only against systems you own or are authorized to test.
 
 ## ⚠️ Safety
 
